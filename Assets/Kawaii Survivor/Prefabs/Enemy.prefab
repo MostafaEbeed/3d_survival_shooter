@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1406767211736150965}
   - component: {fileID: 3530522326331053376}
   - component: {fileID: 1228973409260013506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 1966236662941043329}
   - component: {fileID: 5959421180136922278}
   - component: {fileID: 9067856236739073357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PassAwayParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5003,7 +5003,7 @@ GameObject:
   - component: {fileID: 7603993330344476}
   - component: {fileID: 6516886369984832616}
   - component: {fileID: 8996703735343513444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5104,7 +5104,8 @@ GameObject:
   - component: {fileID: 7396406043991028420}
   - component: {fileID: 9171128728865083884}
   - component: {fileID: 3822328287222665764}
-  m_Layer: 0
+  - component: {fileID: 3383060047557370300}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5144,7 +5145,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3530522326331053376}
   spawnIndicator: {fileID: 6516886369984832616}
   passAwayParticles: {fileID: 5959421180136922278}
-  damage: 10
+  damage: 1
   attackFrequency: 2
   playerDetectionRadius: 1.5
   displayGizmos: 0
@@ -5161,3 +5162,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
+--- !u!58 &3383060047557370300
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8930287094474459312}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.4316646}
+  m_Radius: 0.53833544

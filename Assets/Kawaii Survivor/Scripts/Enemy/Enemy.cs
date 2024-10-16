@@ -91,8 +91,9 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Dealing " + damage + " damage To Player");
         attackTimer = 0f;
+
+        player.TakeDamage(damage);
     }
 
     private void PassAway()
