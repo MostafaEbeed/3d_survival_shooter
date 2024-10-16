@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     [Header("Spawn Sequence Related")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private SpriteRenderer spawnIndicator;
+    [SerializeField] private Collider2D collider;
     private bool hasSpawned;
 
     [Header("Effects")]
@@ -32,6 +34,9 @@ public class Enemy : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] private bool displayGizmos;
+
+    [Header("Actions")]
+    public static Action<int, Vector2> onDamageTaken;
 
     void Start()
     {
@@ -63,8 +68,10 @@ public class Enemy : MonoBehaviour
 
     private void SpawnSequnceCompleted()
     {
-         SetRenderersVisibility(true);
-         hasSpawned = true;
+        SetRenderersVisibility(true);
+        hasSpawned = true;
+
+        collider.enabled = true;
 
         movement.StorePlayer(player);
     }
@@ -128,6 +135,8 @@ public class Enemy : MonoBehaviour
         health -= realDamage;
 
         healthText.text = health.ToString();
+
+        onDamageTaken?.Invoke(damage, transform.position);
 
         if(health <= 0)
         {
