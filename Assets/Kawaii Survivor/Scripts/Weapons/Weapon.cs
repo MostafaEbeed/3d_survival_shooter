@@ -22,10 +22,12 @@ public class Weapon : MonoBehaviour
 
     [Header("Attack")]
     [SerializeField] private int damage;
+    [SerializeField] private float attackDelay;
     [SerializeField] private Animator animator;
-    private List<Enemy> damagedEnemies = new List<Enemy>();
-    private float attackDelay;
+
+
     private float attackTimer;
+    private List<Enemy> damagedEnemies = new List<Enemy>();
 
     [Header("Animations")]
     [SerializeField] private float aimLerp;
@@ -65,6 +67,8 @@ public class Weapon : MonoBehaviour
         state = State.Idle;
 
         damagedEnemies.Clear();
+
+        animator.speed = 1f / attackDelay;
     }
 
     private void AutoAim()
