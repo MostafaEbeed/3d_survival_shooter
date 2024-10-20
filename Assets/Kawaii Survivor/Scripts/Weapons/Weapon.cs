@@ -119,10 +119,13 @@ public class Weapon : MonoBehaviour
         {
             Enemy enemy = enemies[i].GetComponent<Enemy>();
 
-            if (!damagedEnemies.Contains(enemy))
+            if(enemy != null)
             {
-                enemy.TakeDamage(damage);
-                damagedEnemies.Add(enemy);
+                if (!damagedEnemies.Contains(enemy))
+                {
+                    enemy.TakeDamage(damage);
+                    damagedEnemies.Add(enemy);
+                }
             }
         }
     }
