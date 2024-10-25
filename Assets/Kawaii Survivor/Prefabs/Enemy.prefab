@@ -5320,7 +5320,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  healthText: {fileID: 1386865707415003420}
   spriteRenderer: {fileID: 3530522326331053376}
   spawnIndicator: {fileID: 6516886369984832616}
   collider: {fileID: 3383060047557370300}

@@ -85,9 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 1488577995474318565}
-  bulletPrefab: {fileID: 6055077602320047559, guid: 048e5ca938005e6459a87f7bbfd556e4, type: 3}
   damage: 1
   attackFrequency: 1
+  bulletPrefab: {fileID: 6055077602320047559, guid: 048e5ca938005e6459a87f7bbfd556e4, type: 3}
 --- !u!58 &3825471467355634021
 CircleCollider2D:
   m_ObjectHideFlags: 0

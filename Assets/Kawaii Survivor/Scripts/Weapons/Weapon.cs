@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Kawaii_Survivor.Scripts.Enemy;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
