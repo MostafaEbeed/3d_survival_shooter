@@ -84,7 +84,9 @@ public class RangeWeapon : Weapon
 
     private void Shoot()
     {
+        int damage = GetDamage(out bool isCritical);
+        
         Bullet bulletInstance = bulletPool.Get();
-        bulletInstance.Shoot(damage, transform.up);
+        bulletInstance.Shoot(damage, transform.up, isCritical);
     }
 }

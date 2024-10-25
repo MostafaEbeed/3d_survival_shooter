@@ -111,7 +111,9 @@ public class MeleeWeapon : Weapon
             {
                 if (!damagedEnemies.Contains(enemy))
                 {
-                    enemy.TakeDamage(damage);
+                    int damage = GetDamage(out bool isCritical);
+                    
+                    enemy.TakeDamage(damage, isCritical);
                     damagedEnemies.Add(enemy);
                 }
             }

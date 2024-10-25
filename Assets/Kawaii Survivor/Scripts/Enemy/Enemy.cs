@@ -29,7 +29,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
         [SerializeField] protected float playerDetectionRadius;
 
         [Header("Actions")]
-        public static Action<int, Vector2> onDamageTaken;
+        public static Action<int, Vector2, bool> onDamageTaken;
 
         [Header("Debug")]
         [SerializeField] protected bool displayGizmos;
@@ -82,12 +82,12 @@ namespace Kawaii_Survivor.Scripts.Enemy
             spawnIndicator.enabled = !visibility;
         }
         
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, bool isCriticalHit)
         {
             int realDamage = Mathf.Min(damage, health);
             health -= realDamage;
 
-            onDamageTaken?.Invoke(damage, transform.position);
+            onDamageTaken?.Invoke(damage, transform.position, isCriticalHit);
 
             if (health <= 0)
             {
@@ -100,6 +100,8 @@ namespace Kawaii_Survivor.Scripts.Enemy
             passAwayParticles.transform.SetParent(null);
             passAwayParticles.Play();
 
+            LeanTween.cancel(gameObject);
+            
             Destroy(gameObject);
         }
 

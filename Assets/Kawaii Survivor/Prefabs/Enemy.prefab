@@ -5322,12 +5322,12 @@ MonoBehaviour:
   maxHealth: 10
   spriteRenderer: {fileID: 3530522326331053376}
   spawnIndicator: {fileID: 6516886369984832616}
-  collider: {fileID: 3383060047557370300}
+  enemyCollider: {fileID: 3383060047557370300}
   passAwayParticles: {fileID: 5959421180136922278}
-  damage: 1
-  attackFrequency: 2
   playerDetectionRadius: 1.5
   displayGizmos: 1
+  damage: 1
+  attackFrequency: 2
 --- !u!114 &3822328287222665764
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Kawaii_Survivor.Scripts.Enemy;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public abstract class Weapon : MonoBehaviour
 {
@@ -19,6 +20,19 @@ public abstract class Weapon : MonoBehaviour
     [Header("Animations")]
     [SerializeField] protected float aimLerp;
 
+    protected int GetDamage(out bool isCriticalHit)
+    {
+        isCriticalHit = false;
+
+        if (Random.Range(0, 101) <= 50)
+        {
+            isCriticalHit = true;
+            return damage * 2;
+        }
+        
+        return damage;
+    }
+    
     // ReSharper disable Unity.PerformanceAnalysis
     protected Enemy GetClosestEnemy()
     {
