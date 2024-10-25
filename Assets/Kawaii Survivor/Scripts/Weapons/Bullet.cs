@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private LayerMask enemyMask;
     private int damage;
+    private Enemy enemyTarget;
     
     private void Awake()
     {
@@ -41,11 +42,16 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(enemyTarget != null)
+            return;
+        
         if (IsInLayerMask(other.gameObject.layer, enemyMask))
         {
+            enemyTarget = other.GetComponent<Enemy>();
+            
             CancelInvoke();
             
-            Attack(other.GetComponent<Enemy>());
+            Attack(enemyTarget);
             Release();
         }
     }
@@ -70,6 +76,8 @@ public class Bullet : MonoBehaviour
     
     public void Reload()
     {
+        enemyTarget = null;
+        
         rb.linearVelocity = Vector2.zero;
         this.collider.enabled = true;
     }
