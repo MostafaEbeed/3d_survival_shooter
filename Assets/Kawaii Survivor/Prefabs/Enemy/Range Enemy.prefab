@@ -55,7 +55,7 @@ MonoBehaviour:
   maxHealth: 5
   spriteRenderer: {fileID: 5759337371468808742}
   spawnIndicator: {fileID: 8467329168893963014}
-  collider: {fileID: 3825471467355634021}
+  enemyCollider: {fileID: 3825471467355634021}
   passAwayParticles: {fileID: 5521721967411919370}
   playerDetectionRadius: 5
   displayGizmos: 1

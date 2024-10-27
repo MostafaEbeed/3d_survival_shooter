@@ -30,6 +30,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
 
         [Header("Actions")]
         public static Action<int, Vector2, bool> onDamageTaken;
+        public static Action<Vector2> onPassedAway;
 
         [Header("Debug")]
         [SerializeField] protected bool displayGizmos;
@@ -97,6 +98,8 @@ namespace Kawaii_Survivor.Scripts.Enemy
         
         private void PassAway()
         {
+            onPassedAway?.Invoke(transform.position);
+            
             passAwayParticles.transform.SetParent(null);
             passAwayParticles.Play();
 
