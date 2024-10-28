@@ -1,31 +1,71 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using Random = UnityEngine.Random;
 
-public class WaveManager : MonoBehaviour
+[RequireComponent(typeof(WaveManager))]
+public class WaveManager : MonoBehaviour, IGameStateListener
 {
+    [Header("Elements")]
+    [SerializeField] private Player player;
+    [SerializeField] private WaveManagerUI ui;
+    
     [Header("Settings")]
     [SerializeField] private float waveDuration;
     private float timer;
+    private bool isTimerOn;
+    private int currentWaveIndex;
     
     [Header("Waves")]
     [SerializeField] private Wave[] waves;
     private List<float> localCounters = new List<float>();
-    
+
+    private void Awake()
+    {
+        ui = GetComponent<WaveManagerUI>();
+    }
+
     void Start()
     {
-        localCounters.Add(1);
+      
     }
 
     void Update()
     {
-        if(timer < waveDuration)
+        if(!isTimerOn)
+            return;
+
+        if (timer < waveDuration)
+        {
             ManageCurrentWave();
+            string timerString = (Mathf.RoundToInt(waveDuration - timer)).ToString();
+            ui.UpdateTimerText(timerString);
+        }
+        else
+            StartWaveTransition();
+            
     }
 
+    private void StartWave(int waveIndex)
+    {
+        Debug.Log("Starting wave " + waveIndex);
+        
+        ui.UpdateWaveText("Wave " + (currentWaveIndex + 1) + "/" + waves.Length);
+        
+        localCounters.Clear();
+        foreach (WaveSegment waveSegment in waves[waveIndex].segments)
+        {
+            localCounters.Add(1);
+        }
+        
+        timer = 0;
+        isTimerOn = true;
+    }
+    
     private void ManageCurrentWave()
     {
-        Wave currentWave = waves[0];
+        Wave currentWave = waves[currentWaveIndex];
 
         for (int i = 0; i < currentWave.segments.Count; i++)
         {
@@ -43,12 +83,68 @@ public class WaveManager : MonoBehaviour
 
             if (timeSinceSegmentStart / spawnDelay > localCounters[i])
             {
-                Instantiate(segment.prefab, Vector2.zero, Quaternion.identity, transform);
+                Instantiate(segment.prefab, GetSpawnPosition(), Quaternion.identity, transform);
                 localCounters[i]++;
             }
         }
         
         timer += Time.deltaTime;
+    }
+
+    private void StartWaveTransition()
+    {
+        isTimerOn = false;
+        
+        DefeatAllEnemies();
+        
+        currentWaveIndex++;
+
+        if (currentWaveIndex >= waves.Length)
+        {
+            Debug.Log("waves Completed");
+            ui.UpdateTimerText(" ");
+            ui.UpdateWaveText("Stage Completed");
+            GameManager.instance.SetGameState(GameState.STAGECOMPLETE);
+        }
+        else
+            GameManager.instance.WaveCompletedCallback();
+    }
+
+    private void StartNextWave()
+    {
+        StartWave(currentWaveIndex);
+    }
+    
+    private void DefeatAllEnemies()
+    {
+        transform.Clear();
+    }
+    
+    private Vector2 GetSpawnPosition()
+    {
+        Vector2 direction = Random.insideUnitSphere;
+        Vector2 offset = direction.normalized * Random.Range(6, 10);
+        Vector2 taregtPoition = (Vector2)player.transform.position + offset;
+        
+        taregtPoition.x = Mathf.Clamp(taregtPoition.x, -18, 18);
+        taregtPoition.y = Mathf.Clamp(taregtPoition.y, -8, 8);
+        
+        return taregtPoition;
+    }
+
+    public void GameStateChangedCallback(GameState gameState)
+    {
+        switch (gameState)
+        {
+            case GameState.GAME:
+                StartNextWave();
+                break;
+            
+            case GameState.GAMEOVER:
+                isTimerOn = false;
+                DefeatAllEnemies();
+                break;
+        }
     }
 }
 
