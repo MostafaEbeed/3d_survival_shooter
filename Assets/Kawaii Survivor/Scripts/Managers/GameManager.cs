@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartGame() => SetGameState(GameState.GAME);
-    public void StartWeaponSelection() => SetGameState(GameState.WAVETRANSITION);
+    public void StartWeaponSelection() => SetGameState(GameState.WEAPONSELECTION);
     public void StartShop() => SetGameState(GameState.SHOP);
     
     public void SetGameState(GameState gameState)

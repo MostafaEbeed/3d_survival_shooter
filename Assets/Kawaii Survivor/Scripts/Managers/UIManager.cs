@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour, IGameStateListener
                 break;
             
             case GameState.WEAPONSELECTION:
-                ShowPanel(waveTransitionPanel);
+                ShowPanel(weaponSelectionPanel);
                 break;
             
             case GameState.GAME:
