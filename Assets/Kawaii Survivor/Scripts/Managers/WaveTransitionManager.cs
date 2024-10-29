@@ -10,18 +10,9 @@ public class WaveTransitionManager : MonoBehaviour, IGameStateListener
 {
     [FormerlySerializedAs("upgradesButtons")]
     [Header("Elements")]
+    [SerializeField] private PlayerStatsManager playerStatsManager;
     [SerializeField] private UpgradeContainer[] upgradesContainers;
     
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void GameStateChangedCallback(GameState gameState)
     {
         switch (gameState)
@@ -62,7 +53,7 @@ public class WaveTransitionManager : MonoBehaviour, IGameStateListener
     private Action GetActionToPerform(Stat stat, out string buttonString)
     {
         buttonString = "";
-        float value;
+        float value = 0f;
         
         switch (stat)
         {
@@ -127,6 +118,6 @@ public class WaveTransitionManager : MonoBehaviour, IGameStateListener
                 break;
         }
 
-        return () => Debug.Log("Processed");
+        return () => playerStatsManager.AddPLayerStat(stat, value);
     }
 }

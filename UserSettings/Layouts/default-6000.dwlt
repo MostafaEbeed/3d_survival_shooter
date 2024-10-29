@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 332}
   m_MaxSize: {x: 10000, y: 10000}
@@ -433,7 +433,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -7266
+  m_LastSelectedObjectID: -265944
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -477,7 +477,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 270
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -530,7 +530,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Kawaii Survivor/Prefabs/Enemy
+    - Assets/Kawaii Survivor/Prefabs/UI
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -540,16 +540,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Kawaii Survivor/Prefabs/Enemy
+  - Assets/Kawaii Survivor/Prefabs/UI
   m_LastFoldersGridSize: 16
   m_LastProjectPath: H:\UnityProjects\2D_Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 101}
-    m_SelectedIDs: 60bb0000
-    m_LastClickedID: 47968
-    m_ExpandedIDs: 00000000b0b60000b2b60000b4b60000b6b60000b8b60000bab60000bcb60000beb60000c0b60000c2b60000c4b60000
+    scrollPos: {x: 0, y: 233}
+    m_SelectedIDs: 44580100
+    m_LastClickedID: 88132
+    m_ExpandedIDs: 00000000f4b70000f6b70000f8b70000fab70000fcb70000feb7000000b8000002b8000004b8000006b8000008b80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -578,7 +578,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b0b60000b2b60000b4b60000b6b60000b8b60000bab60000bcb60000beb60000c0b60000c2b60000c4b60000
+    m_ExpandedIDs: 00000000f4b70000f6b70000f8b70000fab70000fcb70000feb7000000b8000002b8000004b8000006b8000008b80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -607,7 +607,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300000884000088c4000090c40000126f0000146f0000ac7600009c750000f66f0000f46f000000000000b299feffc0b50000c8e20000701e01002e200100d8ce00007cb300009cf90000
+    m_ExpandedInstanceIDs: c62300000884000088c4000090c40000126f0000146f0000ac7600009c750000f66f0000f46f000000000000b299feffc0b50000c8e20000701e01002e200100d8ce00007cb300009cf9000070f0000086f00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1257,9 +1257,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -4.253741, y: -0.12934506, z: -0.028617632}
+    m_Target: {x: 738.40356, y: 518.07855, z: -2.289826}
     speed: 2
-    m_Value: {x: -4.253741, y: -0.12934506, z: -0.028617632}
+    m_Value: {x: 738.40356, y: 518.07855, z: -2.289826}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1309,9 +1309,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.170224
+    m_Target: 771.46893
     speed: 2
-    m_Value: 14.170224
+    m_Value: 771.46893
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1383,7 +1383,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 10ecffffe4f9ffff3ab400003eb9000042b9000076b90000
+      m_ExpandedIDs: e217fbff8227fdff1c2afdff5e33fdffe2fafffff4ffffff34b200005cb200009cb20000a8b20000c2b20000d4b20000fcb2000090830100e0830100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

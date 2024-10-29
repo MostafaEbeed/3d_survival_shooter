@@ -16,4 +16,11 @@ public class DamageText : MonoBehaviour
         
         animator.Play("Animate");
     }
+    
+    public void Animate(string textToDisplay)
+    {
+        damageText.text = textToDisplay;
+        
+        animator.Play("Animate");
+    }
 }
