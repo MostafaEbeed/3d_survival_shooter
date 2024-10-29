@@ -119,4 +119,15 @@ public class MeleeWeapon : Weapon
             }
         }
     }
+
+    public override void UpdateStat(PlayerStatsManager playerStatsManager)
+    {
+        ConfigureStats();
+        
+        damage = Mathf.RoundToInt(damage * (1 + playerStatsManager.GetStatValue(Stat.Attack) / 100));
+        attackDelay /= 1 + (playerStatsManager.GetStatValue(Stat.AttackSpeed) / 100f);
+        
+        criticalChance = (int)(criticalChance * (1 + playerStatsManager.GetStatValue(Stat.CriticalChance) / 100f));
+        criticalPercent += playerStatsManager.GetStatValue(Stat.CriticalPercent);
+    }
 }

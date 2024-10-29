@@ -89,4 +89,17 @@ public class RangeWeapon : Weapon
         Bullet bulletInstance = bulletPool.Get();
         bulletInstance.Shoot(damage, transform.up, isCritical);
     }
+
+    public override void UpdateStat(PlayerStatsManager playerStatsManager)
+    {
+        ConfigureStats();
+        
+        damage = Mathf.RoundToInt(damage * (1 + playerStatsManager.GetStatValue(Stat.Attack) / 100));
+        attackDelay /= 1 + (playerStatsManager.GetStatValue(Stat.AttackSpeed) / 100f);
+        
+        criticalChance = (int)(criticalChance * (1 + playerStatsManager.GetStatValue(Stat.CriticalChance) / 100f));
+        criticalPercent += playerStatsManager.GetStatValue(Stat.CriticalPercent);
+
+        range += playerStatsManager.GetStatValue(Stat.Range) / 10f;   //dividing by 10 is a design choice .. we can change it
+    }
 }
