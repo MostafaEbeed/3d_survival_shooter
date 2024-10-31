@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Kawaii_Survivor.Scripts.Enemy;
 using UnityEngine;
 using NaughtyAttributes;
 using Random = UnityEngine.Random;
@@ -117,7 +118,10 @@ public class WaveManager : MonoBehaviour, IGameStateListener
     
     private void DefeatAllEnemies()
     {
-        transform.Clear();
+        foreach (Enemy enemy in transform.GetComponentsInChildren<Enemy>())
+        {
+            enemy.PassAwayAfterWave();
+        }
     }
     
     private Vector2 GetSpawnPosition()

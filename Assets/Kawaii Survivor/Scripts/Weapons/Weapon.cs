@@ -83,17 +83,13 @@ public abstract class Weapon : MonoBehaviour, IPlayerStatsDependency
 
     protected void ConfigureStats()
     {
-        float multiplier = 1 + (float)Level / 3;
-        
-        damage = Mathf.RoundToInt(weaponData.GetStatValue(Stat.Attack) * multiplier);
-        
-        attackDelay = 1f / (weaponData.GetStatValue(Stat.AttackSpeed) * multiplier);
-        
-        criticalChance = (int)weaponData.GetStatValue(Stat.CriticalChance) * multiplier;
-        criticalPercent = weaponData.GetStatValue(Stat.CriticalPercent) * multiplier;
-        
-        if(weaponData.Prefab.GetType() == typeof(RangeWeapon))
-            range = weaponData.GetStatValue(Stat.Range) * multiplier;
+        Dictionary<Stat, float> calculatedStats = WeaponStatsCalculator.GetStats(weaponData, Level);
+  
+        damage = Mathf.RoundToInt(calculatedStats[Stat.Attack]);
+        attackDelay = 1f / (calculatedStats[Stat.AttackSpeed]);
+        criticalChance = (int)calculatedStats[Stat.CriticalChance];
+        criticalPercent = calculatedStats[Stat.CriticalPercent];
+        range = calculatedStats[Stat.Range];
     }
 
     public void UpgradeTo(int targetLevel)
