@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 332}
   m_MaxSize: {x: 10000, y: 10000}
@@ -433,7 +433,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -31336
+  m_LastSelectedObjectID: 46022
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -530,7 +530,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Kawaii Survivor/Prefabs/UI
+    - Assets/Kawaii Survivor/Data/Objects
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -540,16 +540,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Kawaii Survivor/Prefabs/UI
+  - Assets/Kawaii Survivor/Data/Objects
   m_LastFoldersGridSize: 16
   m_LastProjectPath: H:\UnityProjects\2D_Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 233}
-    m_SelectedIDs: cecd0000
-    m_LastClickedID: 52686
-    m_ExpandedIDs: 0000000080b9000082b9000084b9000086b9000088b900008ab900008cb900008eb9000090b9000092b9000094b9000096b9000098b900009ab90000
+    scrollPos: {x: 0, y: 239}
+    m_SelectedIDs: c6ba0000
+    m_LastClickedID: 47814
+    m_ExpandedIDs: 0000000090b9000092b9000094b9000096b9000098b900009ab900009cb900009eb90000a0b90000a2b90000a4b90000a6b90000a8b90000aab90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -578,7 +578,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000080b9000082b9000084b9000086b9000088b900008ab900008cb900008eb9000090b9000092b9000094b9000096b9000098b900009ab90000
+    m_ExpandedIDs: 0000000090b9000092b9000094b9000096b9000098b900009ab900009cb900009eb90000a0b90000a2b90000a4b90000a6b90000a8b90000aab90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1257,9 +1257,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 980.9701, y: 521.6502, z: -0.41083568}
+    m_Target: {x: 617.3189, y: 437.2428, z: -3.5456245}
     speed: 2
-    m_Value: {x: 980.9701, y: 521.6502, z: -0.41083568}
+    m_Value: {x: 617.3189, y: 437.2428, z: -3.5456245}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1309,9 +1309,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 207.96683
+    m_Target: 642.9325
     speed: 2
-    m_Value: 207.96683
+    m_Value: 642.9325
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1383,7 +1383,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3c23ffff5423ffff6823ffff6e54ffff1272ffff3e72ffffa272ffff1c7fffff9885ffffdad0ffffe2faffff50b30000a0b30000aab30000f8b30000d4b40000
+      m_ExpandedIDs: e2faffffdab200005eb3000082b30000b6b30000dcb3000012b400009eb40000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1460,7 +1460,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 03000000000000000000000014000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
