@@ -102,7 +102,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerStatsDependency
         healthText.text = (int)health + " / " + maxHealth;
     }
 
-    public void UpdateStat(PlayerStatsManager playerStatsManager)
+    public void UpdateStats(PlayerStatsManager playerStatsManager)
     {
         float addedHealth = playerStatsManager.GetStatValue(Stat.MaxHealth);
         maxHealth = baseMaxHealth + (int)addedHealth;

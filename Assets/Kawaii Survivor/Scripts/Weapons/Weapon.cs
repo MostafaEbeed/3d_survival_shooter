@@ -79,7 +79,7 @@ public abstract class Weapon : MonoBehaviour, IPlayerStatsDependency
         Gizmos.DrawWireSphere(transform.position, range);  
     }
 
-    public abstract void UpdateStat(PlayerStatsManager playerStatsManager);
+    public abstract void UpdateStats(PlayerStatsManager playerStatsManager);
 
     protected void ConfigureStats()
     {

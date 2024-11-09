@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour, IPlayerStatsDependency
         rig.linearVelocity = playerJoystick.GetMoveVector() * moveSpeed * Time.deltaTime;
     }
 
-    public void UpdateStat(PlayerStatsManager playerStatsManager)
+    public void UpdateStats(PlayerStatsManager playerStatsManager)
     {
         float moveSpeedPercent = playerStatsManager.GetStatValue(Stat.MoveSpeed) / 100;
         moveSpeed = baseMoveSpeed * (1 + moveSpeedPercent);

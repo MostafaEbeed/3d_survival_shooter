@@ -15,6 +15,8 @@ public class ChestObjectContainer : MonoBehaviour
     [field: SerializeField] public Button TakeButton { get; private set; }
     [field: SerializeField] public Button RecycleButton { get; private set; }
     
+    [SerializeField] public TextMeshProUGUI recyclePriceText;
+    
     [Header("Color")]
     [SerializeField] private Image[] levelDependentImage;
     [SerializeField] private Outline outLine;
@@ -23,7 +25,8 @@ public class ChestObjectContainer : MonoBehaviour
     {
         icon.sprite = objectData.icon;
         nameText.text = objectData.Name;
-
+        recyclePriceText.text = objectData.RecyclePrice.ToString();
+        
         Color imageColor = ColorHolder.Instance.GetColor(objectData.Rarity);
         nameText.color = imageColor;
         

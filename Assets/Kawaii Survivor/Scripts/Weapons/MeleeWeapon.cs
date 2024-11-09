@@ -120,7 +120,7 @@ public class MeleeWeapon : Weapon
         }
     }
 
-    public override void UpdateStat(PlayerStatsManager playerStatsManager)
+    public override void UpdateStats(PlayerStatsManager playerStatsManager)
     {
         ConfigureStats();
         

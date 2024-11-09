@@ -75,7 +75,7 @@ public class WaveManager : MonoBehaviour, IGameStateListener
             float tStart = segment.tStartEnd.x / 100 * waveDuration;
             float tEnd = segment.tStartEnd.y / 100 * waveDuration;
 
-            if (timer >= tStart && timer <= tEnd)
+            if (timer < tStart && timer > tEnd)
                 continue;
             
             float timeSinceSegmentStart = timer - tStart;

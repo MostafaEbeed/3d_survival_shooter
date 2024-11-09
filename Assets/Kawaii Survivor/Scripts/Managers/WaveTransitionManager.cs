@@ -71,7 +71,7 @@ public class WaveTransitionManager : MonoBehaviour, IGameStateListener
         chestsCollected--;
 
         upgradesContainersParent.SetActive(false);
-        
+        chestContainerParent.gameObject.SetActive(true);
         ObjectDataSO[] objectDatas = ResourcesManager.Objects;
         ObjectDataSO randomObject = objectDatas[Random.Range(0, objectDatas.Length)];
         
@@ -99,18 +99,20 @@ public class WaveTransitionManager : MonoBehaviour, IGameStateListener
     private void ConfigureUpgradeContainers()
     {
         upgradesContainersParent.SetActive(true);
-        
+        chestContainerParent.gameObject.SetActive(false);
         for (int i = 0; i < upgradesContainers.Length; i++)
         {
             int randomIndex = Random.Range(0, Enum.GetValues(typeof(Stat)).Length);
             Stat stat = (Stat)Enum.GetValues(typeof(Stat)).GetValue(randomIndex);
+
+            Sprite upgradeSprite = ResourcesManager.GetStatIcon(stat);
             
             string randomStateString = Enums.FormatStatName(stat);
 
             string buttonString;
             Action action = GetActionToPerform(stat, out buttonString);
             
-            upgradesContainers[i].Configure(null, randomStateString, buttonString);
+            upgradesContainers[i].Configure(upgradeSprite, randomStateString, buttonString);
             
             upgradesContainers[i].Button.onClick.RemoveAllListeners();
 
@@ -192,6 +194,8 @@ public class WaveTransitionManager : MonoBehaviour, IGameStateListener
                 break;
         }
 
+        //buttonString = Enums.FormatStatName(stat) + "\n" + buttonString;
+        
         return () => playerStatsManager.AddPLayerStat(stat, value);
     }
     

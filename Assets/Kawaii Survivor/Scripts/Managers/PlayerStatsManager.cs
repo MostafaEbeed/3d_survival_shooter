@@ -62,11 +62,11 @@ public class PlayerStatsManager : MonoBehaviour
     private void UpdatePlayerStats()
     {
         IEnumerable<IPlayerStatsDependency> playerStatsDependencies =
-            FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IPlayerStatsDependency>();
+            FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None).OfType<IPlayerStatsDependency>();
 
         foreach (IPlayerStatsDependency playerStatsDependency in playerStatsDependencies)
         {
-            playerStatsDependency.UpdateStat(this);
+            playerStatsDependency.UpdateStats(this);
         }
     }
 }
