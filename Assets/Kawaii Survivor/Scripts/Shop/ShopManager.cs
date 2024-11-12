@@ -1,6 +1,10 @@
+using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class ShopManager : MonoBehaviour, IGameStateListener
 {
@@ -8,11 +12,34 @@ public class ShopManager : MonoBehaviour, IGameStateListener
     [SerializeField] private Transform containersParent;
     [SerializeField] private ShopItemContainer shopItemContainerPrefab;
     
+    [Header("Player Components")]
+    [SerializeField] private PlayerWeapons playerWeapons;
+    [SerializeField] private PlayerObjects playerObjects;
+    
+    [Header("Reroll")]
+    [SerializeField] private Button rerollButton;
+    [SerializeField] private int rerollPrice;
+    [SerializeField] private TextMeshProUGUI rerollPriceText;
+
+
+    private void Awake()
+    {
+        ShopItemContainer.onPurchased += ItemPurchasedCallback;
+        CurrencyManager.onUpdated += CurrencyUpdatedCallback;
+    }
+    
+    private void OnDestroy()
+    {
+        ShopItemContainer.onPurchased -= ItemPurchasedCallback;
+        CurrencyManager.onUpdated -= CurrencyUpdatedCallback;
+    }
+
     public void GameStateChangedCallback(GameState gameState)
     {
         if (gameState == GameState.SHOP)
         {
             Configure();
+            UpdateRerollVisuals();
         }
     }
 
@@ -61,5 +88,49 @@ public class ShopManager : MonoBehaviour, IGameStateListener
     public void Reroll()
     {
         Configure();
+        CurrencyManager.instance.UseCurrency(rerollPrice);
+    }
+
+    private void UpdateRerollVisuals()
+    {
+        rerollPriceText.text = rerollPrice.ToString();
+        rerollButton.interactable = CurrencyManager.instance.HasEnoughCurrency(rerollPrice);
+    }
+    
+    private void CurrencyUpdatedCallback()
+    {
+        UpdateRerollVisuals();
+    }
+    
+    private void ItemPurchasedCallback(ShopItemContainer container, int weaponLevel)
+    {
+        if (container.WeaponData != null)
+        {
+            TryPurchaseWeapon(container, weaponLevel);
+        }
+        else
+        {
+            PurchaseObject(container);
+        }
+    }
+
+    private void TryPurchaseWeapon(ShopItemContainer container, int weaponLevel)
+    {
+        if (playerWeapons.TryAddWeapon(container.WeaponData, weaponLevel))
+        {
+            int price = WeaponStatsCalculator.GetPurchasePrice(container.WeaponData, weaponLevel);
+            CurrencyManager.instance.UseCurrency(price);
+            
+            Destroy(container.gameObject);
+        }
+    }
+    
+    private void PurchaseObject(ShopItemContainer container)
+    {
+        playerObjects.AddObject(container.ObjectData);
+        
+        CurrencyManager.instance.UseCurrency(container.ObjectData.Price);
+        
+        Destroy(container.gameObject);
     }
 }
