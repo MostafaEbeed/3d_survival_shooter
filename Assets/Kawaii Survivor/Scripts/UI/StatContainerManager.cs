@@ -19,6 +19,8 @@ public class StatContainerManager : MonoBehaviour
 
     public void GenerateContainers(Dictionary<Stat, float> statDictionary, Transform parent)
     {
+        parent.Clear();
+        
         List<StatContainer> statContainers = new List<StatContainer>();
         
         foreach (KeyValuePair<Stat, float> kvp in statDictionary)
