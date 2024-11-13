@@ -1612,7 +1612,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 205741102}
   m_OnClick:
     m_PersistentCalls:
@@ -3072,7 +3072,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 329016050}
   m_OnClick:
     m_PersistentCalls:
@@ -10552,6 +10552,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveText: {fileID: 1727647177}
   timerText: {fileID: 1953926674}
+--- !u!1 &1130496621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130496622}
+  - component: {fileID: 1130496623}
+  m_Layer: 0
+  m_Name: Weapon Merger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1130496622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130496621}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1578586634}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1130496623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130496621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0871e18855f64950adc5146397e5618f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerWeapons: {fileID: 1217065110}
 --- !u!1 &1153120710
 GameObject:
   m_ObjectHideFlags: 0
@@ -11650,6 +11695,8 @@ MonoBehaviour:
   recyclePriceText: {fileID: 1769920046}
   container: {fileID: 1245639652}
   statsParent: {fileID: 989161723833647871}
+  <RecycleButton>k__BackingField: {fileID: 205741100}
+  <MergeButton>k__BackingField: {fileID: 329016048}
 --- !u!1 &1261575575
 GameObject:
   m_ObjectHideFlags: 0
@@ -15006,6 +15053,7 @@ Transform:
   - {fileID: 263425862}
   - {fileID: 1727674058}
   - {fileID: 633989582}
+  - {fileID: 1130496622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1589178982

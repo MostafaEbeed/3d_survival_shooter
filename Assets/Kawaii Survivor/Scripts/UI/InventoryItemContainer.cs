@@ -9,18 +9,20 @@ public class InventoryItemContainer : MonoBehaviour
     [SerializeField] private Image icon;
     [SerializeField] private Button button;
 
+    public int Index { get; set; }
     public Weapon Weapon { get; private set; }
     public ObjectDataSO ObjectData { get; private set; }
-    
+
     public void Configure(Color containerColor, Sprite itemIcon)
     {
         container.color = containerColor;
         icon.sprite = itemIcon;
     }
 
-    public void Configure(Weapon weapon, Action clickedCallback)
+    public void Configure(Weapon weapon, int index,Action clickedCallback)
     {
         Weapon = weapon;
+        Index = index;
         
         Color color = ColorHolder.Instance.GetColor(weapon.Level);
         Sprite icon = weapon.weaponData.Sprite;

@@ -15,6 +15,7 @@ MonoBehaviour:
   <Name>k__BackingField: DeBoink
   <Sprite>k__BackingField: {fileID: 5485319108022510092, guid: 15c981701acaf3f4b840cf2f1f7d3446, type: 3}
   <PurchasePrice>k__BackingField: 100
+  <RecyclePrice>k__BackingField: 33
   <Prefab>k__BackingField: {fileID: 5346324476910491486, guid: 143ba1c2396ed4b4d8b047a7265b69d3, type: 3}
   attack: 10
   attackSpeed: 2

@@ -21,7 +21,9 @@ public class ShopManager : MonoBehaviour, IGameStateListener
     [SerializeField] private int rerollPrice;
     [SerializeField] private TextMeshProUGUI rerollPriceText;
 
-
+    [Header("Actions")]
+    public static Action onItemPurchased;
+    
     private void Awake()
     {
         ShopItemContainer.onPurchased += ItemPurchasedCallback;
@@ -123,6 +125,8 @@ public class ShopManager : MonoBehaviour, IGameStateListener
             
             Destroy(container.gameObject);
         }
+
+        onItemPurchased?.Invoke();
     }
     
     private void PurchaseObject(ShopItemContainer container)
@@ -132,5 +136,7 @@ public class ShopManager : MonoBehaviour, IGameStateListener
         CurrencyManager.instance.UseCurrency(container.ObjectData.Price);
         
         Destroy(container.gameObject);
+        
+        onItemPurchased?.Invoke();
     }
 }

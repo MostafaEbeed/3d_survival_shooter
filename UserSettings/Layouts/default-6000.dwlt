@@ -41,7 +41,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 492
-    width: 1069
+    width: 975
     height: 449
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
@@ -71,12 +71,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1069
+    width: 975
     height: 941
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 25
+  controlID: 17
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 24
+  controlID: 16
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -193,7 +193,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1069
+    width: 975
     height: 492
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
@@ -219,9 +219,9 @@ MonoBehaviour:
   - {fileID: 12}
   m_Position:
     serializedVersion: 2
-    x: 1069
+    x: 975
     y: 0
-    width: 395
+    width: 489
     height: 941
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
@@ -271,7 +271,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 395
+    width: 489
     height: 628
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
@@ -297,7 +297,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 628
-    width: 395
+    width: 489
     height: 313
   m_MinSize: {x: 232, y: 276}
   m_MaxSize: {x: 10002, y: 10026}
@@ -433,7 +433,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -204362
+  m_LastSelectedObjectID: 46250
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -506,7 +506,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1
     y: 652
-    width: 393
+    width: 487
     height: 287
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Kawaii Survivor/Prefabs/UI
+    - Assets/Resources/Data/Objects
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -540,16 +540,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Kawaii Survivor/Prefabs/UI
+  - Assets/Resources/Data/Objects
   m_LastFoldersGridSize: 16
   m_LastProjectPath: H:\UnityProjects\2D_Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 223}
-    m_SelectedIDs: c6be0000
-    m_LastClickedID: 48838
-    m_ExpandedIDs: 000000006cc100006ec1000070c1000072c1000074c1000076c1000078c100007ac100007cc100007ec1000080c1000082c1000084c1000086c1000088c100008ac10000
+    scrollPos: {x: 0, y: 505}
+    m_SelectedIDs: 8a770100
+    m_LastClickedID: 96138
+    m_ExpandedIDs: 00000000ccc10000cec10000d0c10000d2c10000d4c10000d6c10000d8c10000dac10000dcc10000dec10000e0c10000e2c10000e4c10000e6c10000e8c10000eac10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -578,7 +578,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006cc100006ec1000070c1000072c1000074c1000076c1000078c100007ac100007cc100007ec1000080c1000082c1000084c1000086c1000088c100008ac10000
+    m_ExpandedIDs: 00000000ccc10000cec10000d0c10000d2c10000d4c10000d6c10000d8c10000dac10000dcc10000dec10000e0c10000e2c10000e4c10000e6c10000e8c10000eac10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -635,7 +635,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 172
+  m_DirectoriesAreaWidth: 219
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -659,7 +659,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 24
-    width: 1068
+    width: 974
     height: 466
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1257,9 +1257,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 1450.0841, y: 164.95667, z: -3.6933022}
+    m_Target: {x: 467.29285, y: 426.78235, z: -8.611318}
     speed: 2
-    m_Value: {x: 1450.0841, y: 164.95667, z: -3.6933022}
+    m_Value: {x: 467.29285, y: 426.78235, z: -8.611318}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1309,9 +1309,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 730.5768
+    m_Target: 945.9828
     speed: 2
-    m_Value: 730.5768
+    m_Value: 945.9828
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1365,7 +1365,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1
     y: 24
-    width: 393
+    width: 487
     height: 602
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1383,7 +1383,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 86c1fcff8cc1fcff32d6fcff5cd6fcffb2d6fcffb8d6fcffc6d6fcff2c35fdff205dfdff225dfdff265dfdffce5dfdffd45dfdffde5efeffb2f8feffbcf8feffc6f8feffccf8feffe8f8fefffaf8feffe2faffff74b20000a0b30000bcb3000004b4000060b4000070b40000c4b4000018b5000024b500005ab50000
+      m_ExpandedIDs: 12d6ffff04e1ffff1ae1ffff2ee1ffffe2faffffdcb20000aab300005ab4000060b40000aab40000d0b400002eb5000082b50000d0b50000dab60000f8b6000008b7000012b7000046b7000048b700004ab7000056b700005cb700005eb7000066b7000072b700007ab700007cb70000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1431,7 +1431,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 516
-    width: 1068
+    width: 974
     height: 423
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1488,23 +1488,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1068
+      width: 974
       height: 402
     m_Scale: {x: 0.37222221, y: 0.37222221}
-    m_Translation: {x: 534, y: 201}
+    m_Translation: {x: 487.00003, y: 201}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1434.627
+      x: -1308.3583
       y: -540
-      width: 2869.254
+      width: 2616.7166
       height: 1080
     m_MinimalGUI: 1
   m_defaultScale: 0.37222221
-  m_LastWindowPixelSize: {x: 1068, y: 423}
+  m_LastWindowPixelSize: {x: 974, y: 423}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000000000000
