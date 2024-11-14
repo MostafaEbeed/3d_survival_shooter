@@ -433,7 +433,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 46250
+  m_LastSelectedObjectID: -58622
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -530,7 +530,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Data/Objects
+    - Assets/Resources/Data/Weapons
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -540,16 +540,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Data/Objects
+  - Assets/Resources/Data/Weapons
   m_LastFoldersGridSize: 16
   m_LastProjectPath: H:\UnityProjects\2D_Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 505}
-    m_SelectedIDs: 8a770100
-    m_LastClickedID: 96138
-    m_ExpandedIDs: 00000000ccc10000cec10000d0c10000d2c10000d4c10000d6c10000d8c10000dac10000dcc10000dec10000e0c10000e2c10000e4c10000e6c10000e8c10000eac10000
+    m_SelectedIDs: 8cc20000
+    m_LastClickedID: 49804
+    m_ExpandedIDs: 00000000d6c10000d8c10000dac10000dcc10000dec10000e0c10000e2c10000e4c10000e6c10000e8c10000eac10000ecc10000eec10000f0c10000f2c10000f4c10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -578,7 +578,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ccc10000cec10000d0c10000d2c10000d4c10000d6c10000d8c10000dac10000dcc10000dec10000e0c10000e2c10000e4c10000e6c10000e8c10000eac10000
+    m_ExpandedIDs: 00000000d6c10000d8c10000dac10000dcc10000dec10000e0c10000e2c10000e4c10000e6c10000e8c10000eac10000ecc10000eec10000f0c10000f2c10000f4c10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1257,9 +1257,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 467.29285, y: 426.78235, z: -8.611318}
+    m_Target: {x: -7.241004, y: -2.7469447, z: 0.07914781}
     speed: 2
-    m_Value: {x: 467.29285, y: 426.78235, z: -8.611318}
+    m_Value: {x: -7.241004, y: -2.7469447, z: 0.07914781}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1309,9 +1309,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 945.9828
+    m_Target: 2.0852075
     speed: 2
-    m_Value: 945.9828
+    m_Value: 2.0852075
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1383,7 +1383,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 12d6ffff04e1ffff1ae1ffff2ee1ffffe2faffffdcb20000aab300005ab4000060b40000aab40000d0b400002eb5000082b50000d0b50000dab60000f8b6000008b7000012b7000046b7000048b700004ab7000056b700005cb700005eb7000066b7000072b700007ab700007cb70000
+      m_ExpandedIDs: e2faffffaab20000d0b3000066b4000080b400008eb400009ab40000d8b4000000b500001eb5000068b50000bcb50000d8b500000ab60000dcb600004cb7000082b7000084b7000092b70000aeb70000b6b70000b8b70000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1400,7 +1400,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 11}
+        m_ClientGUIView: {fileID: 8}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0

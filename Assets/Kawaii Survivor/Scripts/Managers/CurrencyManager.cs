@@ -17,6 +17,13 @@ public class CurrencyManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+
+        Candy.onCollected += AddCandyCurrency;
+    }
+
+    private void OnDestroy()
+    {
+        Candy.onCollected -= AddCandyCurrency;
     }
 
     private void Start()
@@ -33,6 +40,15 @@ public class CurrencyManager : MonoBehaviour
         onUpdated?.Invoke();
     }
 
+    private void AddCandyCurrency(Candy candy)
+    {
+        Currency += 1;
+
+        UpdateTexts();
+        
+        onUpdated?.Invoke();
+    }
+    
     private void UpdateTexts()
     {
         CurrencyText[] currencyTexts = FindObjectsByType<CurrencyText>(FindObjectsInactive.Include, FindObjectsSortMode.None);

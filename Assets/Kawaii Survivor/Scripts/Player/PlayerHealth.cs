@@ -92,6 +92,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerStatsDependency
 
     private void PassAway()
     {
+        Debug.Log("Game Overrrrrrr");
         GameManager.instance.SetGameState(GameState.GAMEOVER);
     }
 
