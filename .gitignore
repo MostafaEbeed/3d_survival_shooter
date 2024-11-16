@@ -47,6 +47,7 @@ ExportedObj/
 *.VC.db
 *.fbx
 *.png
+*.psd
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -54,6 +55,7 @@ ExportedObj/
 *.mdb.meta
 *.fbx.meta
 *.png.meta
+*.psd.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
