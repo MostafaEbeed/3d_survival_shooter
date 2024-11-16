@@ -165,7 +165,7 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.MostafaEbeed.MobileSurvivalShooter
-    Standalone: com.DefaultCompany.2D-URP
+    Standalone: com.MostafaEbeed.MobileSurvivalShooter
   buildNumber:
     Standalone: 0
     VisionOS: 0
