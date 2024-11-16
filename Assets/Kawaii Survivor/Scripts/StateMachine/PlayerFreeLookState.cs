@@ -72,7 +72,7 @@ public class PlayerFreeLookState : PlayerBaseState
         //for mobile controls
         Vector3 moveTarget = new Vector3(right.x * stateMachine.mobileJoystick.GetMoveVector().x, 0.0f, forward.z * stateMachine.mobileJoystick.GetMoveVector().y);
         //return forward * stateMachine.mobileJoystick.GetMoveVector().y + right * stateMachine.mobileJoystick.GetMoveVector().x;
-        return moveTarget;
+        return moveTarget.normalized;
     }
 
     private void FaceMovementDirection(Vector3 movement, float deltaTime)
