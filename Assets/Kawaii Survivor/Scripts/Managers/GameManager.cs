@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     public static Action onGamePaused;
     public static Action onGameResumed;
 
+    [Header("Refs")] 
+    [SerializeField] private Player player;
+    
+    public Player Player => player;
+
     private void Awake()
     {
         if(instance == null)

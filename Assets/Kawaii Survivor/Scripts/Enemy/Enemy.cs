@@ -17,9 +17,9 @@ namespace Kawaii_Survivor.Scripts.Enemy
         protected Player player;
         
         [Header("Spawn Sequence Related")]
-        [SerializeField] protected SpriteRenderer spriteRenderer;
-        [SerializeField] protected SpriteRenderer spawnIndicator;
-        [FormerlySerializedAs("collider")] [SerializeField] protected Collider2D enemyCollider;
+        [SerializeField] protected GameObject enemyVisual;
+        [SerializeField] protected GameObject spawnIndicator;
+        [FormerlySerializedAs("collider")] [SerializeField] protected Collider enemyCollider;
         protected bool hasSpawned;
         
         [Header("Effects")]
@@ -54,7 +54,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
 
         protected bool CanAttack()
         {
-            return spriteRenderer.enabled;
+            return enemyVisual.activeInHierarchy;
         }
         
         private void StartSpawnSequence()
@@ -71,16 +71,17 @@ namespace Kawaii_Survivor.Scripts.Enemy
         {
             SetRenderersVisibility(true);
             hasSpawned = true;
+            movement.enabled = true;
 
             enemyCollider.enabled = true;
 
-            movement.StorePlayer(player);
+            movement.StorePlayer(GameManager.instance.Player, transform.position);
         }
         
         private void SetRenderersVisibility(bool visibility = true)
         {
-            spriteRenderer.enabled = visibility;
-            spawnIndicator.enabled = !visibility;
+            enemyVisual.SetActive(visibility);
+            spawnIndicator.SetActive(!visibility);
         }
         
         public void TakeDamage(int damage, bool isCriticalHit)
@@ -98,6 +99,10 @@ namespace Kawaii_Survivor.Scripts.Enemy
         
         public void PassAway()
         {
+            movement.enabled = false;
+            
+            movement.ClearPlayer();
+            
             onPassedAway?.Invoke(transform.position);
 
             PassAwayAfterWave();

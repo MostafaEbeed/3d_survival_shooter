@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class EnemyMovement : MonoBehaviour
     
     [Header("Settings")]
     [SerializeField] private float moveSpeed;
+    [SerializeField] private NavMeshAgent agent;
+
+    private void OnEnable()
+    {
+        
+    }
 
     void Update()
     {
@@ -15,19 +22,24 @@ public class EnemyMovement : MonoBehaviour
             FollowPlayer();*/
     }
 
-    public void StorePlayer(Player player)
+    public void StorePlayer(Player player, Vector3 spawnPosition)
     {
         this.player = player;
+        
+        agent.enabled = true;
+        
+        agent.Warp(spawnPosition);
+    }
+
+    public void ClearPlayer()
+    {
+        this.player = null;
     }
 
     public void FollowPlayer()
     {
-        if(player == null) return;
+        if(player == null || !player.gameObject.activeInHierarchy) return;
 
-        Vector2 direction = (player.transform.position - transform.position).normalized;
-
-        Vector2 targetPosition = (Vector2)transform.position + direction * moveSpeed * Time.deltaTime;
-
-        transform.position = targetPosition;
+        agent.destination = player.transform.position;
     }
 }

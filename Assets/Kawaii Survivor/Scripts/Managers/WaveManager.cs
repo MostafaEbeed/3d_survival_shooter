@@ -84,7 +84,7 @@ public class WaveManager : MonoBehaviour, IGameStateListener
 
             if (timeSinceSegmentStart / spawnDelay > localCounters[i])
             {
-                Instantiate(segment.prefab, GetSpawnPosition(), Quaternion.identity, transform);
+                Instantiate(segment.prefab, GetSpawnPosition(), Quaternion.identity, null);
                 localCounters[i]++;
             }
         }
@@ -124,14 +124,15 @@ public class WaveManager : MonoBehaviour, IGameStateListener
         }
     }
     
-    private Vector2 GetSpawnPosition()
+    private Vector3 GetSpawnPosition()
     {
-        Vector2 direction = Random.insideUnitSphere;
-        Vector2 offset = direction.normalized * Random.Range(6, 10);
-        Vector2 taregtPoition = (Vector2)player.transform.position + offset;
+        Vector3 direction = Random.insideUnitSphere;
+        direction.y = 0;
+        Vector3 offset = direction.normalized * Random.Range(6, 10);
+        Vector3 taregtPoition = (Vector3)player.transform.position + offset;
         
         taregtPoition.x = Mathf.Clamp(taregtPoition.x, -18, 18);
-        taregtPoition.y = Mathf.Clamp(taregtPoition.y, -8, 8);
+        taregtPoition.z = Mathf.Clamp(taregtPoition.z, -8, 8);
         
         return taregtPoition;
     }

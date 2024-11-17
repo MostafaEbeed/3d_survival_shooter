@@ -39,7 +39,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
 
         private void TryAttack()
         {
-            float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
             if (distanceToPlayer <= playerDetectionRadius)
                 Attack();
