@@ -21,7 +21,7 @@ public class WaveManager : MonoBehaviour, IGameStateListener
     [Header("Waves")]
     [SerializeField] private Wave[] waves;
     private List<float> localCounters = new List<float>();
-
+    
     private void Awake()
     {
         ui = GetComponent<WaveManagerUI>();
@@ -118,10 +118,12 @@ public class WaveManager : MonoBehaviour, IGameStateListener
     
     private void DefeatAllEnemies()
     {
-        foreach (Enemy enemy in transform.GetComponentsInChildren<Enemy>())
+        /*foreach (Enemy enemy in spawnedEnemies)
         {
             enemy.PassAwayAfterWave();
         }
+        
+        spawnedEnemies.Clear();*/
     }
     
     private Vector3 GetSpawnPosition()

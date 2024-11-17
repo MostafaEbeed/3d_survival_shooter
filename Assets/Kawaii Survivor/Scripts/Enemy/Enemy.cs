@@ -1,11 +1,10 @@
 using UnityEngine;
 using System;
-using UnityEditor.Animations;
 using UnityEngine.Serialization;
 
 namespace Kawaii_Survivor.Scripts.Enemy
 {
-    public abstract class Enemy : MonoBehaviour
+    public abstract class Enemy : MonoBehaviour, IGameStateListener
     {
         [Header("Components")]
         protected EnemyMovement movement;
@@ -32,7 +31,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
 
         [Header("Actions")]
         public static Action<int, Vector2, bool> onDamageTaken;
-        public static Action<Vector2> onPassedAway;
+        public static Action<Vector3> onPassedAway;
 
         [Header("Debug")]
         [SerializeField] protected bool displayGizmos;
@@ -113,12 +112,16 @@ namespace Kawaii_Survivor.Scripts.Enemy
 
         public void PassAwayAfterWave()
         {
+            if(passAwayParticles == null) return;
             passAwayParticles.transform.SetParent(null);
             passAwayParticles.Play();
 
-            LeanTween.cancel(gameObject);
+            if (gameObject)
+            {
+                LeanTween.cancel(gameObject);
+                Destroy(gameObject);
+            }
             
-            Destroy(gameObject);
         }
 
         private void OnDrawGizmos()
@@ -127,6 +130,24 @@ namespace Kawaii_Survivor.Scripts.Enemy
 
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(transform.position, playerDetectionRadius);
+        }
+
+        public void GameStateChangedCallback(GameState gameState)
+        {
+            switch (gameState)
+            {
+                case GameState.STAGECOMPLETE:
+                    PassAwayAfterWave();
+                    break;
+            
+                case GameState.GAMEOVER:
+                    PassAwayAfterWave();
+                    break;
+                
+                case GameState.WAVETRANSITION:
+                    PassAwayAfterWave();
+                    break;
+            }
         }
     }
 }

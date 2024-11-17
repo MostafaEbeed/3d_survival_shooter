@@ -65,10 +65,13 @@ namespace Kawaii_Survivor.Scripts.Enemy
 
             foreach (Collider collider in colliders)
             {
-                if (collider.CompareTag("Player"))
+                if (collider != null)
                 {
-                    player.TakeDamage(damage);
-                    yield return null;
+                    if (collider.CompareTag("Player"))
+                    {
+                        player.TakeDamage(damage);
+                        yield return null;
+                    }
                 }
             }
         }

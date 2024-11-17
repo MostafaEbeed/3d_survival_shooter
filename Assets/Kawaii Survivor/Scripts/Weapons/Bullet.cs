@@ -3,12 +3,12 @@ using Kawaii_Survivor.Scripts.Enemy;
 using UnityEngine;
 
 
-[RequireComponent (typeof(Rigidbody2D), typeof(Collider2D))]
+[RequireComponent (typeof(Rigidbody))]
 public class Bullet : MonoBehaviour
 {
     [Header("Elements")]
-    private Rigidbody2D rb;
-    private Collider2D collider;
+    private Rigidbody rb;
+    private Collider collider;
     private RangeWeapon rangeWeapon;
     
     [Header("Settings")]
@@ -20,8 +20,8 @@ public class Bullet : MonoBehaviour
     
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        collider = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody>();
+        collider = GetComponent<Collider>();
 
         //LeanTween.delayedCall(gameObject, 5, () => rangeEnemyAttack.ReleaseBullet(this));
     }
@@ -31,18 +31,18 @@ public class Bullet : MonoBehaviour
         this.rangeWeapon = rangeWeapon;
     }
     
-    public void Shoot(int damage, Vector2 direction, bool isCriticalHit)
+    public void Shoot(int damage, Vector3 direction, bool isCriticalHit)
     {
         Invoke("Release", 1f);
         
         this.damage = damage;
         this.isCriticalHit = isCriticalHit;
         
-        transform.right = direction;
+        transform.forward = direction;
         rb.linearVelocity = direction * moveSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if(enemyTarget != null)
             return;

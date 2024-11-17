@@ -86,7 +86,7 @@ public class DropManager : MonoBehaviour
         Destroy(cash.gameObject);
     }
    
-    private void EnemyPassedAwayCallback(Vector2 enemyPosition)
+    private void EnemyPassedAwayCallback(Vector3 enemyPosition)
     {
         bool shouldDropCash = Random.Range(0, 101) <= cashDropChance;
         

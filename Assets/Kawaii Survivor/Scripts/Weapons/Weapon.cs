@@ -47,9 +47,9 @@ public abstract class Weapon : MonoBehaviour, IPlayerStatsDependency
     protected Enemy GetClosestEnemy()
     {
         Enemy closestEnemy = null;
-        Vector2 targetUpVector = Vector3.up;
+        Vector3 targetUpVector = Vector3.up;
 
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, range, enemyMask);
+        Collider[] enemies = Physics.OverlapSphere(transform.position, range, enemyMask);
 
         if (enemies.Length <= 0)
             return null;
@@ -60,7 +60,7 @@ public abstract class Weapon : MonoBehaviour, IPlayerStatsDependency
         {
             Enemy enemyChecked = enemies[i].GetComponent<Enemy>();
 
-            float distanceToEnemy = Vector2.Distance(transform.position, enemyChecked.transform.position);
+            float distanceToEnemy = Vector3.Distance(transform.position, enemyChecked.transform.position);
 
             if (distanceToEnemy < minDistance)
             {

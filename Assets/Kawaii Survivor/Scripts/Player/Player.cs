@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
     public Vector3 GetCenter()
     {
-        return transform.position + collider.transform.localPosition;
+        return transform.position + Vector3.up * 0.5f/*+ collider.transform.localPosition*/;
     }
 
     public bool HasLeveledUp()

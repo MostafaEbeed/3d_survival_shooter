@@ -56,38 +56,39 @@ public class RangeWeapon : Weapon
     private void AutoAim()
     {
         Enemy closestEnemy = GetClosestEnemy();
-
-        Vector2 targetUpVector = Vector3.up;
+    
+        //Vector3 targetUpVector = Vector3.up;
 
         if(closestEnemy)
         {
-            targetUpVector = (closestEnemy.transform.position - transform.position).normalized;
-            transform.up = targetUpVector;
+            Debug.Log(closestEnemy.name);
+            transform.LookAt(closestEnemy.transform);
             
-            ManageShooting();
+            ManageShooting(closestEnemy);
             return; 
         }
         
-        transform.up = Vector3.Lerp(transform.up, targetUpVector, Time.deltaTime * aimLerp);
+        transform.LookAt(transform.parent.transform.forward);
+        //transform.up = Vector3.Lerp(transform.up, targetUpVector, Time.deltaTime * aimLerp);
     }
 
-    private void ManageShooting()
+    private void ManageShooting(Enemy target)
     {
         attackTimer += Time.deltaTime;
         
         if(attackTimer >= attackDelay)
         {
             attackTimer = 0f;
-            Shoot();
+            Shoot(target);
         } 
     }
 
-    private void Shoot()
+    private void Shoot(Enemy target)
     {
         int damage = GetDamage(out bool isCritical);
         
         Bullet bulletInstance = bulletPool.Get();
-        bulletInstance.Shoot(damage, transform.up, isCritical);
+        bulletInstance.Shoot(damage, (target.transform.position - transform.position).normalized, isCritical);
     }
 
     public override void UpdateStats(PlayerStatsManager playerStatsManager)

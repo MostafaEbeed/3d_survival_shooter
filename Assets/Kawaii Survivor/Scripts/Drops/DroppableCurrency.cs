@@ -26,11 +26,11 @@ public abstract class DroppableCurrency : MonoBehaviour, ICollectable
         float timer = 0.0f;
         Vector3 initialPosition = transform.position;
        
-        while (timer < 1.0f)
+        while (timer < 0.5f)
         {
             Vector3 targetPosition = player.GetCenter();
             
-            transform.position = Vector2.Lerp(initialPosition, targetPosition, timer * 2f);
+            transform.position = Vector3.Lerp(initialPosition, targetPosition, timer * 2f);
             timer += Time.deltaTime;
             
             yield return null;
