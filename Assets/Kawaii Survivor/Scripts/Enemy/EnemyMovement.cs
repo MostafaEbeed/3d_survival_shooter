@@ -11,6 +11,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private NavMeshAgent agent;
 
+    public NavMeshAgent Agent => agent;
+    
     private void OnEnable()
     {
         

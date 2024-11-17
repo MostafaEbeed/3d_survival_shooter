@@ -120,10 +120,11 @@ GameObject:
   - component: {fileID: 3097812788793943498}
   - component: {fileID: 5130844318586110505}
   - component: {fileID: 7543798417653406616}
+  - component: {fileID: 3092634765201016603}
   - component: {fileID: 5327569443544972912}
   - component: {fileID: 5279137312645885825}
   m_Layer: 0
-  m_Name: Imp_Enemy
+  m_Name: Imp_S_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,15 +160,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe4a1f5429303e448d2524c8cf04268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationController: {fileID: 3092634765201016603}
   maxHealth: 10
   enemyVisual: {fileID: 4150341589897434122}
   spawnIndicator: {fileID: 6465520233106443285}
   enemyCollider: {fileID: 5279137312645885825}
   passAwayParticles: {fileID: 5845933716337938290}
-  playerDetectionRadius: 4
+  playerDetectionRadius: 1.5
   displayGizmos: 1
   damage: 1
-  attackFrequency: 2
+  attackFrequency: 1.5
+  animationSyncDelay: 0.5
 --- !u!114 &7543798417653406616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +185,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
   agent: {fileID: 5327569443544972912}
+--- !u!114 &3092634765201016603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732935079236930915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6afcc47f7258743b14f0d52641f019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7220121052298368202}
+  animatorController: {fileID: 22100000, guid: 310b70fd2db439e44807ede20e9c5ecf, type: 2}
 --- !u!195 &5327569443544972912
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -196,7 +213,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 270
-  m_StoppingDistance: 1
+  m_StoppingDistance: 1.35
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -403,5 +420,10 @@ Transform:
 --- !u!1 &4150341589897434122 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aac23fe206ff8df4d9d61b04b46a273f, type: 3}
+  m_PrefabInstance: {fileID: 3844262628420544859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7220121052298368202 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: aac23fe206ff8df4d9d61b04b46a273f, type: 3}
   m_PrefabInstance: {fileID: 3844262628420544859}
   m_PrefabAsset: {fileID: 0}

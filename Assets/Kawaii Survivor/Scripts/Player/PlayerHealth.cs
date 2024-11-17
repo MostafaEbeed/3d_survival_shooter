@@ -21,7 +21,8 @@ public class PlayerHealth : MonoBehaviour, IPlayerStatsDependency
     [Header("Elements")]
     [SerializeField] private Slider healthSlider;
     [SerializeField] private TextMeshProUGUI healthText;
-
+    [SerializeField] private HighLightShadingEffect highLight;
+    
     [Header("Actiond")] 
     public static Action<Vector2> onAttackeDodged;
 
@@ -84,7 +85,7 @@ public class PlayerHealth : MonoBehaviour, IPlayerStatsDependency
         float realDamage = damage * Mathf.Clamp(1 - (armor / 1000), 0, 10000);
         realDamage = Mathf.Min(realDamage, health);
         health -= realDamage;
-
+        highLight.FlashOnImapct();
         UpdateUI();
 
         if (health <= 0)

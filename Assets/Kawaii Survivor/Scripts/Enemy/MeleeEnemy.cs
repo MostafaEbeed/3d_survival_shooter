@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,6 +11,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
         [Header("Attack")]
         [SerializeField] private int damage;
         [SerializeField] private float attackFrequency;
+        [SerializeField] private float animationSyncDelay;
         private float attackDelay;
         private float attackTimer;
 
@@ -24,7 +26,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
         {
             if(!CanAttack()) return;
             
-            if (attackTimer >= attackDelay)
+            if (attackTimer >= attackFrequency)
                 TryAttack();
             else
                 Wait();
@@ -48,9 +50,27 @@ namespace Kawaii_Survivor.Scripts.Enemy
 
         private void Attack()
         {
+            animationController.PlayAttackAnimation();
+            
             attackTimer = 0f;
 
-            player.TakeDamage(damage);
+            StartCoroutine(CastDamage());
+        }
+
+        IEnumerator CastDamage()
+        {
+            yield return new WaitForSeconds(animationSyncDelay);
+            
+            Collider[] colliders = Physics.OverlapSphere(transform.position, playerDetectionRadius);
+
+            foreach (Collider collider in colliders)
+            {
+                if (collider.CompareTag("Player"))
+                {
+                    player.TakeDamage(damage);
+                    yield return null;
+                }
+            }
         }
     }
 }

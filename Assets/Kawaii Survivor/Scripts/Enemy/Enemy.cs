@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEditor.Animations;
 using UnityEngine.Serialization;
 
 namespace Kawaii_Survivor.Scripts.Enemy
@@ -8,6 +9,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
     {
         [Header("Components")]
         protected EnemyMovement movement;
+        [SerializeField] protected EnemyAnimationController animationController;
         
         [Header("Health")]
         [SerializeField] protected int maxHealth;
@@ -40,7 +42,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
             health = maxHealth;
             
             movement = GetComponent<EnemyMovement>();
-            
+
             player = FindFirstObjectByType<Player>();
 
             if (player == null)
@@ -72,6 +74,7 @@ namespace Kawaii_Survivor.Scripts.Enemy
             SetRenderersVisibility(true);
             hasSpawned = true;
             movement.enabled = true;
+            animationController.StartAnimations();
 
             enemyCollider.enabled = true;
 
