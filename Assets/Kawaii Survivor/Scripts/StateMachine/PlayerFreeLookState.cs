@@ -23,7 +23,7 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         Vector3 movement = CalculateMovement();
 
-        Move(movement * stateMachine.FreeLookMovementSpeed * 0.1f, deltaTime);
+        Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime);
 
         //CheckForEnemies();
 
