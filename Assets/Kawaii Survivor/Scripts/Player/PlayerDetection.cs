@@ -7,7 +7,7 @@ public class PlayerDetection : MonoBehaviour
 {
     [FormerlySerializedAs("daveCollider")]
     [Header("Colliders")]
-    [SerializeField] private CircleCollider2D collectablesCollider;
+    [SerializeField] private Collider collectablesCollider;
 
 
     /*private void FixedUpdate()
@@ -23,11 +23,15 @@ public class PlayerDetection : MonoBehaviour
         }
     }*/
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out ICollectable collectable))
         {
-            if (!other.IsTouching(collectablesCollider))
+            /*if (!other.IsTouching(collectablesCollider))
+            {
+                return;
+            }*/
+            if (!other.bounds.Intersects(collectablesCollider.bounds))
             {
                 return;
             }

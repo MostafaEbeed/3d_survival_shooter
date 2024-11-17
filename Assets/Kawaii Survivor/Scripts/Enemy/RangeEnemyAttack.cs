@@ -84,7 +84,7 @@ public class RangeEnemyAttack : MonoBehaviour
 
     private void Shoot()
     {
-        Vector2 direction = (player.GetCenter() - (Vector2)shootingPoint.position).normalized;
+        Vector2 direction = (player.GetCenter() - (Vector3)shootingPoint.position).normalized;
 
         EnemyBullet bulletInstance = bulletsPool.Get();
         bulletInstance.Shoot(damage, direction);

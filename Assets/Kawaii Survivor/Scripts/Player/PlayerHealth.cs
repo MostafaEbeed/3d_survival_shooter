@@ -30,6 +30,12 @@ public class PlayerHealth : MonoBehaviour, IPlayerStatsDependency
         Enemy.onDamageTaken += EnemyTookDamageCallback;
     }
 
+    private void Start()
+    {
+        healthSlider = UIManager.instance.HealthBar;
+        healthText = UIManager.instance.HealthText;
+    }
+
     private void OnDestroy()
     {
         Enemy.onDamageTaken -= EnemyTookDamageCallback;
@@ -99,8 +105,11 @@ public class PlayerHealth : MonoBehaviour, IPlayerStatsDependency
     private void UpdateUI()
     {
         float healthBarValue = health / maxHealth;
-        healthSlider.value = healthBarValue;
-        healthText.text = (int)health + " / " + maxHealth;
+        if (healthSlider)
+        {
+            healthSlider.value = healthBarValue;
+            healthText.text = (int)health + " / " + maxHealth;
+        }
     }
 
     public void UpdateStats(PlayerStatsManager playerStatsManager)

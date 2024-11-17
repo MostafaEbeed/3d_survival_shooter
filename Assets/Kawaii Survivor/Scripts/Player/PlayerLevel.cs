@@ -21,10 +21,15 @@ public class PlayerLevel : MonoBehaviour
     private void Awake()
     {
         Candy.onCollected += CandyCollectedCallback;
+
+        
     }
     
     private void Start()
     {
+        xpBar = UIManager.instance.XPBar;
+        levelText = UIManager.instance.XPText;
+        
         UpdateRequiredXp();
         UpdateVisuals();
     }

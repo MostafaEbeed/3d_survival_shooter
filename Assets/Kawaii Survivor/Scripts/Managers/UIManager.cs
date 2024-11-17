@@ -1,9 +1,13 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour, IGameStateListener
 {
+    public static UIManager instance;
+    
     [Header("Panels")]
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject weaponSelectionPanel;
@@ -14,11 +18,25 @@ public class UIManager : MonoBehaviour, IGameStateListener
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject restartConfirmationPanel;
+    [SerializeField] private Slider healthBar;
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private Slider xpBar;
+    [SerializeField] private TextMeshProUGUI xpText;
     
     private List<GameObject> panels = new List<GameObject>();
 
+    public Slider HealthBar => healthBar;
+    public TextMeshProUGUI HealthText => healthText;
+    public Slider XPBar => xpBar;
+    public TextMeshProUGUI XPText => xpText;
+    
     private void Awake()
     {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+        
         panels.AddRange(new GameObject[]
         {
             menuPanel,
